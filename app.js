@@ -27,3 +27,21 @@ function filterCards(){const q=document.getElementById('searchInput').value.toLo
 document.getElementById('searchInput').addEventListener('input',filterCards);
 document.getElementById('regionFilter').addEventListener('change',filterCards);
 document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('sidebar').classList.toggle('open'));
+
+function randomSampleCode() {
+    return Math.floor(100000 + Math.random() * 900000);
+}
+
+function updateSampleCodes() {
+    document.getElementById("otpIndia").textContent =
+        randomSampleCode();
+
+    document.getElementById("otpUSA").textContent =
+        randomSampleCode();
+
+    document.getElementById("otpUK").textContent =
+        randomSampleCode();
+}
+
+updateSampleCodes();
+setInterval(updateSampleCodes, 5000);
