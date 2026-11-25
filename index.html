@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SHYAM OTP WORKS — simulated OTP testing dashboard">
+  <title>SHYAM OTP WORKS | Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="#"><span class="brand-mark">S</span><span>SHYAM <b>OTP WORKS</b></span></a>
+      <div class="top-actions">
+        <span class="demo-pill"><i></i> SIMULATION MODE</span>
+        <button class="icon-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+      </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="profile">
+        <div class="avatar">S</div>
+        <div><strong>Demo User</strong><small>Local preview account</small></div>
+      </div>
+      <nav>
+        <a class="active" href="#catalog">▦ <span>Buy Demo Code</span></a>
+        <a href="#orders">◷ <span>Code History</span></a>
+        <a href="#wallet">◈ <span>Wallet</span></a>
+        <a href="#about">ⓘ <span>About Demo</span></a>
+      </nav>
+      <div class="side-note">No real phone numbers, SMS, payments or third-party verification are connected.</div>
+    </aside>
+
+    <main class="main">
+      <section class="welcome">
+        <div>
+          <p class="eyebrow">TESTING DASHBOARD</p>
+          <h1>Welcome to <span>SHYAM OTP WORKS</span></h1>
+          <p class="sub">Explore the interface and generate sample codes for your own app testing.</p>
+        </div>
+        <div class="balance-card" id="wallet">
+          <span>DEMO WALLET BALANCE</span>
+          <strong>₹0.00</strong>
+          <small>Real payments are disabled</small>
+        </div>
+      </section>
+
+      <div class="demo-banner">⚠ <b>DEMO ONLY:</b> All numbers and OTPs shown here are fictional. Generated codes work only as visual samples in this page.</div>
+
+      <section class="stats">
+        <article class="stat"><span>Available demo services</span><strong>04</strong><small>Sample catalogue</small></article>
+        <article class="stat"><span>Generated this session</span><strong id="generatedCount">00</strong><small>Stored in this page only</small></article>
+        <article class="stat"><span>Wallet balance</span><strong>₹0</strong><small>No top-ups enabled</small></article>
+      </section>
+
+      <section class="section" id="catalog">
+        <div class="section-head">
+          <div><p class="eyebrow">SERVICE CATALOGUE</p><h2>Select a demo service</h2></div>
+          <span class="tag">SIMULATED CODES</span>
+        </div>
+        <div class="filters">
+          <label class="search">⌕ <input id="searchInput" type="search" placeholder="Search demo services..."></label>
+          <select id="regionFilter" aria-label="Filter region">
+            <option value="all">All regions</option><option value="India">India</option><option value="United States">United States</option><option value="United Kingdom">United Kingdom</option><option value="Global">Global</option>
+          </select>
+        </div>
+        <div class="service-grid" id="serviceGrid">
+          <article class="service-card" data-name="WhatsApp" data-region="India">
+            <div class="service-top"><div class="service-icon whatsapp">W</div><span class="available">● Demo</span></div>
+            <h3>WhatsApp UI Test</h3><p>India · Sample flow</p>
+            <div class="price-row"><strong>₹33</strong><span>sample price label</span></div>
+            <button class="primary generate" data-service="WhatsApp UI Test" data-region="India">Generate sample code <span>→</span></button>
+          </article>
+          <article class="service-card" data-name="WhatsApp" data-region="United States">
+            <div class="service-top"><div class="service-icon whatsapp">W</div><span class="available">● Demo</span></div>
+            <h3>WhatsApp UI Test</h3><p>United States · Sample flow</p>
+            <div class="price-row"><strong>₹49</strong><span>sample price label</span></div>
+            <button class="primary generate" data-service="WhatsApp UI Test" data-region="United States">Generate sample code <span>→</span></button>
+          </article>
+          <article class="service-card" data-name="Telegram" data-region="India">
+            <div class="service-top"><div class="service-icon telegram">➤</div><span class="available">● Demo</span></div>
+            <h3>Telegram UI Test</h3><p>India · Sample flow</p>
+            <div class="price-row"><strong>₹29</strong><span>sample price label</span></div>
+            <button class="primary generate" data-service="Telegram UI Test" data-region="India">Generate sample code <span>→</span></button>
+          </article>
+          <article class="service-card" data-name="Telegram" data-region="Global">
+            <div class="service-top"><div class="service-icon telegram">➤</div><span class="available">● Demo</span></div>
+            <h3>Telegram UI Test</h3><p>Global · Sample flow</p>
+            <div class="price-row"><strong>₹59</strong><span>sample price label</span></div>
+            <button class="primary generate" data-service="Telegram UI Test" data-region="Global">Generate sample code <span>→</span></button>
+          </article>
+        </div>
+        <p class="empty" id="emptyState" hidden>No demo services match your search.</p>
+      </section>
+
+      <section class="section history" id="orders">
+        <div class="section-head"><div><p class="eyebrow">RECENT ACTIVITY</p><h2>Demo code history</h2></div><button class="clear-btn" id="clearHistory">Clear history</button></div>
+        <div class="history-list" id="historyList"><div class="empty-history">No sample codes generated yet. Choose a demo service above.</div></div>
+      </section>
+
+      <section class="about section" id="about">
+        <h2>About this preview</h2>
+        <p>This is a front-end-only prototype. It does not rent or provide phone numbers, receive SMS, connect to WhatsApp or Telegram, or verify external accounts. Sample codes are randomly generated in your browser for testing your own interface.</p>
+      </section>
+      <footer>© 2026 SHYAM OTP WORKS · Demo prototype</footer>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="closeModal" aria-label="Close">×</button>
+      <div class="success-mark">✓</div>
+      <p class="eyebrow">SAMPLE GENERATED</p>
+      <h2 id="modalTitle">Your demo code</h2>
+      <p class="modal-desc" id="modalDesc">Fictional code for local UI testing only.</p>
+      <div class="code-box"><strong id="sampleCode">000000</strong><button id="copyCode">Copy</button></div>
+      <div class="modal-warning">This code is not delivered by SMS and cannot verify any real account.</div>
+      <button class="primary full" id="doneBtn">Done</button>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
